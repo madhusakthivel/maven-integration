@@ -20,7 +20,7 @@ pipeline {
         stage('Docker image build'){
             steps{
                 sh "mvnw spring-boot:build-image"
-                docker run -it -p8082:8082 springboot-demo
+                docker run -it -p 8082:8082 springboot-demo
             }
         }  
             /*post {
