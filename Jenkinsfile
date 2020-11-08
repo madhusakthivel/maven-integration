@@ -8,7 +8,7 @@ pipeline {
             steps {
                 //git 'https://github.com/madhusakthivel/JenkinsMavenInt.git'
                 //bat "mvn clean package"
-                git https://github.com/madhusakthivel/springboot-demo.git
+                git 'https://github.com/madhusakthivel/springboot-demo.git'
                 sh "mvn clean package"
             }
         }
