@@ -9,7 +9,7 @@ pipeline {
                 //git 'https://github.com/madhusakthivel/JenkinsMavenInt.git'
                 //bat "mvn clean package"
                 git 'https://github.com/madhusakthivel/springboot-demo.git'
-                sh "mvn clean package"
+                sh "mvn clean package build"
             }
         }
         stage('Unit Test'){
