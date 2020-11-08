@@ -6,15 +6,27 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/madhusakthivel/JenkinsMavenInt.git'
+                //git 'https://github.com/madhusakthivel/JenkinsMavenInt.git'
                 //bat "mvn clean package"
+                git https://github.com/madhusakthivel/springboot-demo.git
                 sh "mvn clean package"
             }
-            post {
+        }
+        stage('Unit Test'){
+            steps{
+                echo 'Executing Unit test cases'
+            }
+        }
+        stage('Docker image build'){
+            steps{
+                sh "mvnw spring-boot:build-image"
+                docker run -it -p8082:8082 springboot-demo
+            }
+        }  
+            /*post {
                  success {
                     echo 'maven build success :'+env.WORKSPACE
                 }
-            }
-        }
+            }*/
     }
 }
