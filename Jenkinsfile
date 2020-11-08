@@ -17,7 +17,7 @@ pipeline {
                 echo 'Executing Unit test cases'
             }
         }
-        *post {
+        /*post {
                  success {
                     echo 'maven build success :'+env.WORKSPACE
                 }
