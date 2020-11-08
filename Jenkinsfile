@@ -19,7 +19,6 @@ pipeline {
         }
         stage('Docker Build'){
             steps{
-                sh 'sudo su root'
                 sh 'docker build . -t springdemo'
                 sh 'docker run -d -p 8082:8082 springdemo:latest' 
             }
