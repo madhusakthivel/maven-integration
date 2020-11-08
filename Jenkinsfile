@@ -17,13 +17,7 @@ pipeline {
                 echo 'Executing Unit test cases'
             }
         }
-        stage('Docker image build'){
-            steps{
-                sh "mvnw spring-boot:build-image"
-                docker run -it -p 8082:8082 springboot-demo
-            }
-        }  
-            /*post {
+        *post {
                  success {
                     echo 'maven build success :'+env.WORKSPACE
                 }
