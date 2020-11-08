@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Docker Build'){
             steps{
-                sh 'docker build . -t springdemo'
+                sh 'docker build . -t madhu26/springdemo'
                 sh 'docker run -d -p 8082:8082 springdemo:latest' 
             }
         }
